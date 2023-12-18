@@ -81,7 +81,7 @@ if __name__ == "__main__":
 	# st.image('./docschat_webapp/img.jpg')
 	st.subheader('LLM Document Chat')
 	with st.sidebar:
-		api_key = st.text_input('OpenAI API Key: ', type='password')
+		api_key = st.text_input('API Key: ', type='password')
 		if api_key:
 			os.environ['OPENAI_API_KEY'] = api_key
 		
