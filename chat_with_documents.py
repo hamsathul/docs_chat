@@ -1,6 +1,9 @@
 import streamlit as st
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 
 def load_document(file):
@@ -79,7 +82,7 @@ if __name__ == "__main__":
 	load_dotenv(find_dotenv(), override=True)
 
 	# st.image('./docschat_webapp/img.jpg')
-	st.subheader('LLM Document Chat')
+	st.subheader('Document Chat')
 	with st.sidebar:
 		api_key = st.text_input('API Key: ', type='password')
 		if api_key:
